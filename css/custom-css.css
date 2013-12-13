@@ -161,3 +161,34 @@ li #login-content {
     top: 2px;
     right: 2px;
   }
+
+  .flt-left {
+    float:left;
+  }
+
+  .flt-right{
+    float:right;
+  }
+
+  .presentation {
+    width:85%;
+    margin:0 auto;
+    padding-top:65px;
+    position:relative;
+    font-size:16px;
+    line-height: 24px;
+  }
+
+  .presentation h2{
+    padding-top:60px;
+    font-weight: normal;
+    color:#0074c8;
+  }
+
+  .w45pc {
+    width:45%;
+  } 
+
+  .clear{
+    clear: both;
+  }
