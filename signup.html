@@ -24,7 +24,7 @@
                     showControls: false,
                     showBullets: false,
                     controlsMousewheel: false,
-                    prevText: 'Back',
+                    prevText: '< Back',
                     nextText:'Next',
                     slidePrevDirection: 'toRight',
                     slideNextDirection: 'toLeft'
@@ -55,9 +55,6 @@
                         break;
                     case 'rhino-item1':
                         step2_validation();
-                        break;
-                    case 'rhino-item2':
-                        step3_validation();
                         break;
                 }
             });
@@ -105,36 +102,43 @@
             var step2_validation = function(){
                 var err = 0;
 
-                if($('#username').val() == ''){
-                    $('#username').parent().parent().find('.form-error').html("Your First Name is important. Please Provide it.");
+                if($('#clinicname').val() == ''){
+                    $('#clinicname').parent().parent().find('.form-error').html("The Clinic's name is important. Please Provide it.");
                     err++;
                 }
-                if($('#pass').val() == ''){
-                    $('#pass').parent().parent().find('.form-error').html("Password is Required");
+                if($('#clinicaddress').val() == ''){
+                    $('#clinicaddress').parent().parent().find('.form-error').html("The Clinic's Address is important. Please provide it.");
                     err++;
                 }
-                if($('#cmphone').val() == ''){
-                    $('#cmphone').parent().parent().find('.form-error').html("Your phone number is important. Please Provide it.");
+                if($('#city').val() == ''){
+                    $('#city').parent().parent().find('.form-error').html("In which city is the Clinic located ?");
+                    err++;
+                }
+                if($('#region').val() == ''){
+                    $('#region').parent().parent().find('.form-error').html("In which region is the Clinic located ?");
+                    err++;
+                }
+                if($('#clinicphone').val() == ''){
+                    $('#clinicphone').parent().parent().find('.form-error').html("The Clinic's Phone number is important. Please Provide it.");
+                    err++;
+                }
+                if($('#adminphone').val() == ''){
+                    $('#adminphone').parent().parent().find('.form-error').html("The Clinic Admin's number is important. Please Provide it.");
+                    err++;
+                }
+                if($('#web').val() == ''){
+                    $('#web').parent().parent().find('.form-error').html("Which is your clinic's website link? Please Provide it.");
+                    err++;
+                }
+                if($('#clinicemail').val() == ''){
+                    $('#clinicemail').parent().parent().find('.form-error').html("Your Clinic's Email is important. Please Provide it.");
+                    err++;
+                }
+                if($('#clinicpass').val() == ''){
+                    $('#clinicpass').parent().parent().find('.form-error').html("Your Clinic's user passowrd is important. Please Provide it.");
                     err++;
                 }
                 
-                if(err == 0){
-                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
-                    $(".rhino-next").show();
-                    $('.form-submit').hide();
-                    $('.rhino-next').trigger('click');
-                }else{
-                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
-                }
-            };
-
-            var step3_validation = function(){
-                var err = 0;
-
-                if($('#email').val() == ''){
-                    $('#email').parent().parent().find('.form-error').html("Email is Required");
-                    err++;
-                }
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
                     $(".rhino-next").show();
@@ -194,10 +198,9 @@
                                 <div class="form-error"></div>
                             </div>
                              <div class="row">
-                                <div class="form-left">Select City *</div>
                                 <div class="form-right">
-                                    <select id="gender" name="gender">
-                                        <option value="0">Option</option>
+                                    <select id="city" name="city">
+                                        <option>Select City *</option>
                                         <option value="1">Option</option>
                                         <option value="2">Option</option>
                                     </select>
@@ -207,7 +210,7 @@
                             <div class="row">
                                 <div class="form-right">
                                     <select id="region" name="region">
-                                        <option value="0">Region *</option>
+                                        <option>Select Region *</option>
                                         <option value="a">Option</option>
                                         <option value="b">Option</option>
                                     </select>
@@ -227,24 +230,11 @@
                                 <div class="form-error"></div>
                             </div>
                             <div class="row">
-                                <div class="form-right"><input type="email" id="clinicemail" name="clinicemail" placeholder="name@domain.com" class="form-input" /></div>
+                                <div class="form-right"><input type="email" id="clinicemail" name="clinicemail" placeholder="Clinic Email: name@domain.com" class="form-input" /></div>
                                 <div class="form-error"></div>
                             </div>
                             <div class="row">
-                                <div class="form-left">Password *</div>
-                                <div class="form-right"><input type="password" id="clinicpass" name="clinicpass" class="form-input" /></div>
-                                <div class="form-error"></div>
-                            </div>
-                        </div>
-                        <div class="form-step">
-                          
-                            <div class="row">
-                                <div class="form-right"><input type="text" id="address" name="address" class="form-input" /></div>
-                                <div class="form-error"></div>
-                            </div>
-                            <div class="row">
-                                <div class="form-left">Mobile No</div>
-                                <div class="form-right"><input type="text" id="mobile" name="mobile" class="form-input" /></div>
+                                <div class="form-right"><input type="password" id="clinicpass" name="clinicpass" placeholder="Clinic password *" class="form-input" /></div>
                                 <div class="form-error"></div>
                             </div>
                         </div>
@@ -253,11 +243,13 @@
             </div>
         </div>
   </div>
-     <footer> 
-          <p class=""> Copyright 2013. | 
-            <a href="#"> Terms and Conditions</a>
+     <footer class="reg_footer"> 
+        <h4>Have an account ? <a href="#">Sign In.</a></h4>
+          <p> Copyright 2013. | 
+            <a href="#"> Terms and Conditions</a> |
+            <a href="#"> <img src="img/logo2.png"> </a>
           </p>
-          <a href="#"> <img class="pull-right" src="img/logo2.png"> </a>
+          
     </footer> 
 </body>
 </html>
